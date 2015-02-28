@@ -3,15 +3,12 @@ import java.util.Date;
 
 class User{
     public  String userId;    	     // Username
-    public  String stationIds;	     // String of stationIds associated with user
     private int    privacyFlag;	     // flag that will deciede whether posting is pub or private
     public  String name; 		     // Real name or Nickname
     private String type; 		     // Type of User Normal/Admin
     private Date   lastLogIn; 	     // Time stamp of last login
 
     static hasMany = [stations:Station]
-//    static hasMany = [posts : Post]
-//    static hasMany = [photos : Photo]
 
 
 //    public void SetPrivacy(int privacy){

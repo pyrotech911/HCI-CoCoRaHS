@@ -5,11 +5,9 @@ class Station{
     public  String postIds;
     private String lastLocation;
     private Date   lastUpdate;
-    private String userIds;
-    private String lastUser;
 
     static belongsTo = [user:User]
-//    static hasMany = [posts : Post]
+    static hasMany = [posts : Post]
 
 //
 //    void SetLastLocation(String loc){
