@@ -9,31 +9,7 @@ class User{
     private Date   lastLogIn; 	     // Time stamp of last login
 
     static hasMany = [stations:Station]
-
-
-//    public void SetPrivacy(int privacy){
-//        privacyFlag = privacy;
-//    }
-
-//    public void SetType(String userType){
-//        type = userType;
-//    }
-//
-//    public Date SetLastLogIn(Date timeStamp){
-//        lastLogIn = timeStamp;
-//    }
-//
-//    public int GetPrivacy(){
-//        return privacyFlag;
-//    }
-//
-//    public String GetType(){
-//        return type;
-//    }
-//
-//    public Date GetLastLogIn(){
-//        return lastLogIn;
-//    }
+    
 
     static constraints = {
 //        login size: 5..15, blank: false, unique: true
