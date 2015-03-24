@@ -6,7 +6,7 @@ class Station{
     private String lastLocation;
     private Date   lastUpdate;
 
-    static belongsTo = [user:User]
+    static belongsTo = [user: user]
     static hasMany = [posts : Post]
 
     static constraints = {
