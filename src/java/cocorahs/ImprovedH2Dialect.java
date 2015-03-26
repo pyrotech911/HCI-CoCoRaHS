@@ -1,7 +1,7 @@
 /**
  * Created by dnyanesh on 2/27/15.
  */
-package cocorhs;
+package cocorahs;
 
 import org.hibernate.dialect.H2Dialect;
 
@@ -19,5 +19,5 @@ public class ImprovedH2Dialect extends H2Dialect {
         // leads to error messages about missing tables when we don't have a
         // schema in the database
         return false;
-    }
+     }
 }
