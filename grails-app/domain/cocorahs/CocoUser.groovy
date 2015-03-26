@@ -1,6 +1,6 @@
 package cocorahs
 
-class user {
+class CocoUser {
 
 	transient springSecurityService
 
@@ -22,8 +22,8 @@ class user {
 		password column: '`password`'
 	}
 
-	Set<admin> getAuthorities() {
-		useradmin.findAllByuser(this).collect { it.admin }
+	Set<CocoAdmin> getAuthorities() {
+		CocoUserCocoAdmin.findAllByuser(this).collect { it.cocoAdmin }
 	}
 
 	def beforeInsert() {
