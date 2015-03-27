@@ -1,6 +1,6 @@
 package cocorahs
 
-class CocoAdmin {
+class CocoRole {
 
 	String authority
 

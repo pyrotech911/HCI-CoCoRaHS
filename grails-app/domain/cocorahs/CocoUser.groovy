@@ -22,8 +22,8 @@ class CocoUser {
 		password column: '`password`'
 	}
 
-	Set<CocoAdmin> getAuthorities() {
-		CocoUserCocoAdmin.findAllByuser(this).collect { it.cocoAdmin }
+	Set<CocoRole> getAuthorities() {
+		CocoUserCocoRole.findAllByCocoUser(this).collect { it.cocoRole }
 	}
 
 	def beforeInsert() {

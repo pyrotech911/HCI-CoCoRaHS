@@ -116,15 +116,31 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
-
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'cocorahs.user'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'cocorahs.useradmin'
-grails.plugin.springsecurity.authority.className = 'cocorahs.admin'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'cocorahs.CocoUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'cocorahs.CocoUserCocoRole'
+grails.plugin.springsecurity.authority.className = 'cocorahs.CocoRole'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
+	'/assets/**':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugin.springsecurity.interceptUrlMap = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/dbconsole/**':                  ['ROLE_ADMIN'],
+	'/site/**':                       ['ROLE_ADMIN'],
+	'/cocouser/**':                   ['permitAll'],
+	'/login/**':                      ['permitAll'],
+	'/logout/**':                     ['permitAll'],
 	'/assets/**':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],

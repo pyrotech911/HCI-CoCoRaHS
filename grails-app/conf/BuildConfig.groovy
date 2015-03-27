@@ -80,7 +80,7 @@ grails.project.dependency.resolution = {
         compile ":famfamfam:1.0.1"
         //compile ":spring-security-ui:1.0-RC2"
         //compile ":spring-security-core:2.0-RC4"
-        compile ":spring-security-core:1.2.7.3"
+        //compile ":spring-security-core:1.2.7.3"
 
     }
 }
