@@ -6,7 +6,7 @@ class BootStrap {
 		def adminRole = new CocoRole(authority: 'ROLE_ADMIN').save(flush: true) 
 		def userRole = new CocoRole(authority: 'ROLE_USER').save(flush: true)
 		
-		def testUser = new CocoUser(username: 'me', enabled: true, password: 'password') 
+		def testUser = new CocoUser(username: 'test', enabled: true, password: 'test') 
 		testUser.save(flush: true)
 		
 		CocoUserCocoRole.create testUser, adminRole, true
