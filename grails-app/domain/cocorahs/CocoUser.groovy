@@ -4,13 +4,17 @@ class CocoUser {
 
 	transient springSecurityService
 
-	String username
-	String password
+	String username				// Username
+	String password				// Password
+	private int privacyFlag		// Determines whether posting is public or private
+	public String name			// Real name or Nickname
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-
+	
+	static hasMany = [stations: Station]
+	
 	static transients = ['springSecurityService']
 
 	static constraints = {

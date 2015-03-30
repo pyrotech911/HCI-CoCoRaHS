@@ -4,15 +4,16 @@
 	<title><g:message code="springSecurity.login.title"/></title>
 	<style type='text/css' media='screen'>
 	#login {
-		margin: 15px 0px;
-		padding: 0px;
+		justify-content: center;
 		text-align: center;
+		background-color: #5c87b2;
+		padding-top: 30px;
+		padding-bottom: 50px;
 	}
 
 	#login .inner {
 		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
+		margin: auto;
 		text-align: left;
 		border: 1px solid #aab;
 		background-color: #f0f0fa;
@@ -55,7 +56,7 @@
 	}
 
 	#login #remember_me_holder {
-		padding-left: 120px;
+		padding-left: 100px;
 	}
 
 	#login #submit {
@@ -84,9 +85,9 @@
 	</style>
 </head>
 
-<body>
-<p>This is just a test.</p>
+<body bgcolor="#5c87b2">
 <div id='login'>
+	<img src="/cocorahs/assets/site/Logo.svg" height="300" width="300">
 	<div class='inner'>
 		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
 

@@ -1,8 +1,8 @@
 package cocorahs
 
 class Station{
-    public  String stationId;
-    public  String postIds;
+    String stationId;
+    public String postIds;
     private String lastLocation;
     private Date   lastUpdate;
 
@@ -10,7 +10,11 @@ class Station{
     static hasMany = [posts : Post]
 
     static constraints = {
-
+		
     }
+	
+	String toString(){
+		"${stationId}"
+	   }
 }
 

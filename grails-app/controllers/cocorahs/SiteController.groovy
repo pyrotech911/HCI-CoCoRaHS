@@ -8,4 +8,6 @@ class SiteController {
     def index() { }
 	
 	def test() { }
+	
+	def station() { }
 }
