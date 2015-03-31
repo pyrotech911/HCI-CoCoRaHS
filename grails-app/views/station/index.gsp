@@ -23,9 +23,12 @@
 			<table>
 			<thead>
 					<tr>
-					
 						<g:sortableColumn property="stationId" title="${message(code: 'station.stationId.label', default: 'Station Id')}" />
 					
+						<g:sortableColumn property="latitude" title="${message(code: 'station.latitude.label', default: 'Latitude')}" />
+					
+						<g:sortableColumn property="longitude" title="${message(code: 'station.longitude.label', default: 'Longitude')}" />
+						
 						<th><g:message code="station.user.label" default="User" /></th>
 					
 					</tr>
@@ -35,6 +38,10 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${stationInstance.id}">${fieldValue(bean: stationInstance, field: "stationId")}</g:link></td>
+					
+						<td>${fieldValue(bean: stationInstance, field: "latitude")}</td>
+					
+						<td>${fieldValue(bean: stationInstance, field: "longitude")}</td>
 					
 						<td>${fieldValue(bean: stationInstance, field: "user")}</td>
 					

@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list station">
 			
+				<g:if test="${stationInstance?.latitude}">
+				<li class="fieldcontain">
+					<span id="latitude-label" class="property-label"><g:message code="station.latitude.label" default="Latitude" /></span>
+					
+						<span class="property-value" aria-labelledby="latitude-label"><g:fieldValue bean="${stationInstance}" field="latitude"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${stationInstance?.longitude}">
+				<li class="fieldcontain">
+					<span id="longitude-label" class="property-label"><g:message code="station.longitude.label" default="Longitude" /></span>
+					
+						<span class="property-value" aria-labelledby="longitude-label"><g:fieldValue bean="${stationInstance}" field="longitude"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${stationInstance?.posts}">
 				<li class="fieldcontain">
 					<span id="posts-label" class="property-label"><g:message code="station.posts.label" default="Posts" /></span>

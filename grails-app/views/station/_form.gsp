@@ -2,6 +2,24 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: stationInstance, field: 'latitude', 'error')} required">
+	<label for="latitude">
+		<g:message code="station.latitude.label" default="Latitude" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="latitude" value="${fieldValue(bean: stationInstance, field: 'latitude')}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: stationInstance, field: 'longitude', 'error')} required">
+	<label for="longitude">
+		<g:message code="station.longitude.label" default="Longitude" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="longitude" value="${fieldValue(bean: stationInstance, field: 'longitude')}" required=""/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: stationInstance, field: 'posts', 'error')} ">
 	<label for="posts">
 		<g:message code="station.posts.label" default="Posts" />

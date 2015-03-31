@@ -2,6 +2,8 @@ package cocorahs
 
 class Station{
     String stationId;
+	float latitude;
+	float longitude;
     public String postIds;
     private String lastLocation;
     private Date   lastUpdate;
