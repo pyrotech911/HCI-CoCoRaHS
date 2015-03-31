@@ -12,10 +12,6 @@
 	text-align: left;
 	border: 1px solid #aab;
 	background-color: #f0f0fa;
-	-moz-box-shadow: 2px 2px 2px #eee;
-	-webkit-box-shadow: 2px 2px 2px #eee;
-	-khtml-box-shadow: 2px 2px 2px #eee;
-	box-shadow: 2px 2px 2px #eee;
 }
 	
 #login .inner .fheader {

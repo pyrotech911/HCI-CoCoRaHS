@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <r:require modules="bootstrap"/>
-    <title>Map Test</title>
-    <asset:stylesheet src="application.css"/>
-    
-    <g:layoutHead/>
-    <style>
-      body,html {height:100%}
-      #map {width:400px;height:400px;}
-    </style>
-    <asset:javascript src="geolocation.js"/>
+    <meta name='layout' content='site'/>
+    <title>Station</title>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script>window.onload = initGeolocation</script>
   </head>
-  <body onload="javascript:initGeolocation()">
-    <div id="map">
+  <body>
+    <div id="map" style="width:500px;height:400px;">
     </div>
   </body>
 </html>
