@@ -131,7 +131,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':                ['permitAll']
 ]
 
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/site/station'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/station/index'
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [
 	'/':                              ['permitAll'],

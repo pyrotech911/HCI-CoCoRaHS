@@ -1,0 +1,15 @@
+.map {
+	margin-left: calc(50% - 250px);
+}
+
+.list {
+	text-align: center;
+	font-size: 30px;
+}
+
+table {
+	width: 500px;
+	border: 1px;
+	margin-left: calc(50% - 250px);
+	text-align: center;
+}
