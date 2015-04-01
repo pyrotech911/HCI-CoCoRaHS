@@ -5,7 +5,7 @@
 	
 </head>
 
-<body bgcolor="#5c87b2">
+<body>
 <div id='login'>
 	<img src="/cocorahs/assets/site/Logo.svg" height="300" width="300">
 	<div class='inner'>
