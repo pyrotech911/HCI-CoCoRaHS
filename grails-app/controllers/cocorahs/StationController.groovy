@@ -20,8 +20,7 @@ class StationController {
 		
 		if(debugIndex)
 		{
-			println stations.size()
-			stations.each{ println it.stationId }
+			stations.each{ println it.id + " " + it.stationId }
 		}
 		
 		def stationList = []
@@ -30,6 +29,7 @@ class StationController {
 			stationDetail.put('stationId', stations[i].stationId)
 			stationDetail.put('longitude', stations[i].longitude)
 			stationDetail.put('latitude', stations[i].latitude)
+			stationDetail.put('id', (stations[i].id).toString())
 			stationList << stationDetail
 		}
 		
@@ -46,6 +46,8 @@ class StationController {
     }
 
     def create() {
+		def currUser = springSecurityService.getCurrentUser()
+		[currUser:currUser]
         respond new Station(params)
     }
 

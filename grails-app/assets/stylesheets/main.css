@@ -135,7 +135,7 @@ img {
 
 .nav {
 	background-color: #5c87b2;
-	padding: 0.5em 0.75em;
+	padding-right: 0.75em;
 	zoom: 1;
 }
 
@@ -395,7 +395,6 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 1em;
@@ -469,10 +468,6 @@ th.desc a {
 
 .even {
 	background: #ffffff;
-}
-
-th:hover, tr:hover {
-	background: #E1F2B6;
 }
 
 /* PAGINATION */

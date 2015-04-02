@@ -7,7 +7,7 @@
 		<g:message code="station.latitude.label" default="Latitude" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="latitude" value="${fieldValue(bean: stationInstance, field: 'latitude')}" required=""/>
+	<g:field name="latitude" type="text" value="${fieldValue(bean: stationInstance, field: 'latitude')}" required=""/>
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="station.longitude.label" default="Longitude" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="longitude" value="${fieldValue(bean: stationInstance, field: 'longitude')}" required=""/>
+	<g:field name="longitude" type="text" value="${fieldValue(bean: stationInstance, field: 'longitude')}" required=""/>
 
 </div>
 

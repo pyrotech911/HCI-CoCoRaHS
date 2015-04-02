@@ -16,8 +16,8 @@
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                  <li><form name="settings" method="POST" action=""> <input type="submit" value="Settings" height="100px"></form></li>
-                  <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="50px"></form></li>
+                  <li><form name="settings" method="POST" action=""> <input type="submit" value="Settings" height="100px" class="settings"></form></li>
+                  <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="50px" class="logout"></form></li>
             </ul>
        </div><!-- /.navbar-collapse -->
  

@@ -9,7 +9,36 @@
 
 table {
 	width: 500px;
-	border: 1px;
 	margin-left: calc(50% - 250px);
 	text-align: center;
+}
+
+.settings {
+	background-color: #5c87b2;
+	border: 0px;
+	color: #FFF;
+	font-size: 18px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 0px;
+	height: 50px;
+}
+
+.settings:hover {
+	background-color: #729cc7;
+}
+
+.logout {
+	background-color: #5c87b2;
+	border: 0px;
+	color: #FFF;
+	font-size: 18px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 0px;
+	height: 50px;
+}
+
+.logout:hover {
+	background-color: #729cc7;
 }

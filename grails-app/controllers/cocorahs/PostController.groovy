@@ -9,7 +9,28 @@ class PostController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+	static final boolean debugIndex = true
+	def index() {
+		def statId = Long.valueOf(params.stID)
+		def currStation = Station.findAllWhere(id: statId)
+		def posts = Post.findAllWhere(station: currStation[0])
+		
+		if(debugIndex)
+		{
+			posts.each{ println it.postId + " " + it.comment }
+		}
+		
+		def postList = []
+		for(int i = 0; i < posts.size; i++) {
+			def postDetail = [:]
+			postDetail.put('postId',posts[i].postId)
+			postDetail.put('comment', posts[i].comment)
+			postList << postDetail
+		}
+		[postList:postList]
+	}
+	
+    def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Post.list(params), model: [postInstanceCount: Post.count()]
     }
@@ -85,7 +106,7 @@ class PostController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Post.label', default: 'Post'), postInstance.id])
-                redirect action: "index", method: "GET"
+                redirect action: "list", method: "GET"
             }
             '*' { render status: NO_CONTENT }
         }
@@ -95,7 +116,7 @@ class PostController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), params.id])
-                redirect action: "index", method: "GET"
+                redirect action: "list", method: "GET"
             }
             '*' { render status: NOT_FOUND }
         }

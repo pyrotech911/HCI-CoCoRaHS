@@ -14,7 +14,7 @@
     <div class="list">
       <table>
         <g:each in="${stationList}">
-          <tr><td><p> ${it.stationId} (${it.longitude},${it.latitude})</p></td></tr>
+          <tr><td><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (${it.longitude},${it.latitude})</g:link></td></tr>
         </g:each>
       </table>
     </div>
