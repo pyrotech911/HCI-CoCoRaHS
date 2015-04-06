@@ -81,6 +81,7 @@ grails.project.dependency.resolution = {
         compile ":jquery-ui:1.10.4"
         compile ":famfamfam:1.0.1"
         compile ":rest:0.8"
+        compile ":marshallers:0.6"
 
     }
 }
