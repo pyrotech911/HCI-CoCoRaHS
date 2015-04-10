@@ -1,3 +1,6 @@
+<head>
+	<asset:javascript src="goback.js"/>
+</head>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
    <div class="container-fluid">
  
@@ -10,7 +13,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <g:link controller="Home"><div class="navbar-brand title-name">CoCoRaHS</div></g:link>
+            <button onclick="goBack()" class="back">Return</button>
        </div>
  
        <!-- Collect the nav links, forms, and other content for toggling -->
