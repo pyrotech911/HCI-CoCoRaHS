@@ -15,7 +15,7 @@
     <asset:javascript src="geolocation.js"/>
   </head>
   <body>
-  	<div class="map" id="map" style="width:500px;height:400px;">
+  	<div class="map" id="map" style="width:100%;height:400px;">
     </div>
     <div class="list">
       <table>

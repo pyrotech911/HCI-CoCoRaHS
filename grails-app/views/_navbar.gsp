@@ -14,14 +14,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height="50" width="80"></button>
+            <button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height="100%" width="100%"></button>
        </div>
  
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                  <li><form name="help" method="POST" action="${createLink(controller:'help') }"> <input type="submit" value="Help" height="100px" class="settings"></form></li>
-                  <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="50px" class="logout"></form></li>
+                  <li><form name="help" method="POST" action="${createLink(controller:'help') }"> <input type="submit" value="Help" height="100%" class="settings"></form></li>
+                  <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></li>
 
 
             </ul>
