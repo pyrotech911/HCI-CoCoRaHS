@@ -74,7 +74,6 @@ table {
 	background-color: #729cc7;
 }
 
-/*<<<<<<< HEAD*/
 .textarea{
     background-color: transparent;
     border: 0px;
@@ -89,11 +88,10 @@ table {
 }
 
 .subButton{
-    background-color: #add8e6;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    margin: 0.25em 35.8em 0;  /* change this absolute margin*/
+    margin: 0.25em 35.4em 0;  /* change this absolute margin*/
     text-align: center;
     overflow: visible;
     font-size: 18px;
@@ -106,7 +104,6 @@ table {
     border-radius: 10px;
 }
 
-/*=======*/
 .addedit {
 	color: #FFF;
 	font-size: 30px;	
@@ -127,4 +124,3 @@ table {
 	margin-bottom: 0px;
 	border-style: solid;
 }
-/*>>>>>>> 3c1794c5100b1ff0d8a6dd3af3fe60d6fbbb55dd*/

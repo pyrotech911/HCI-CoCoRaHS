@@ -13,10 +13,10 @@ class BootStrap {
 		def pst1 = new Post(comment:"This is my first post!")
 		def pst2 = new Post(comment:"This is a different post!")
 		
-		def st1 = new Station(stationId:"Station1",latitude:47.1122,longitude:-58.9657)
+		def st1 = new Station(stationId:"Station1",latitude:47.1183,longitude:-88.5471)
 			.addToPosts(pst1)
 			
-		def st2 = new Station(stationId:"Station2",latitude:48.1234,longitude:-58.9656)
+		def st2 = new Station(stationId:"Station2",latitude:47.1182,longitude:-88.5460)
 			.addToPosts(pst2)
 			
 		def st3 = new Station(stationId:"Station3",latitude:24.9876,longitude:45.3333)

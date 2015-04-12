@@ -8,27 +8,17 @@
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>
-
-  <nav class="navbar" role="navigation">
-      <div class="container-fluid">
-          %{--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">--}%
-              <div class="navbar-header">
-                <g:message code="All Stations" />
-              %{--</div>--}%
-          %{--</div>--}%
-      </div>
-  </nav>
-%{--<<<<<<< HEAD--}%
-  <div class="container-fluid">
-      <div class="list">
-        <g:link class="create" action="create" id="${postInstance?.stationId}" >
-                <img src="/cocorahs/assets/site/AddSegment.svg" height="300" width="800">
-        </g:link>
-      </div>
-   </div>
-%{--=======--}%
-    <div class="map" id="map" style="width:500px;height:400px;">
-    </div>
+  <div class="map" id="map" style="width:500px;height:400px;">
+  </div>
+  %{--<div class="container-fluid">--}%
+      %{--<div class="addedit">--}%
+        %{--<g:link class="create" action="create" id="${postInstance?.stationId}" >--}%
+                %{--<img src="/cocorahs/assets/site/AddSegment.svg" height="300" width="800">--}%
+        %{--</g:link>--}%
+      %{--</div>--}%
+   %{--</div>--}%
+    %{--<div class="map" id="map" style="width:500px;height:400px;">--}%
+    %{--</div>--}%
     <div class="addedit">
       <table>
       	<tr>

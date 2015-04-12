@@ -142,6 +142,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	'/cocouser/**':                   ['permitAll'],
 	'/station/**':                    ['permitAll'],
 	'/post/**':                       ['permitAll'],
+    '/photo/**':                      ['permitAll'],
 	'/login/**':                      ['permitAll'],
 	'/logout/**':                     ['permitAll'],
 	'/assets/**':                     ['permitAll'],

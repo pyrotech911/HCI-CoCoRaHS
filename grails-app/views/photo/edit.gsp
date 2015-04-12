@@ -16,7 +16,7 @@
 			</ul>
 		</div>
 		<div id="edit-photo" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+			%{--<h1><g:message code="default.edit.label" args="[entityName]" /></h1>--}%
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:photoInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:photoInstance, action:'update']" method="POST" enctype="multipart/form-data">
 				<g:hiddenField name="version" value="${photoInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
