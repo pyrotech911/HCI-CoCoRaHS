@@ -21,7 +21,7 @@
     </div>
 
 
-    <div id="create-photo" class="content scaffold-create" role="main">
+    %{--<div id="create-photo" class="content scaffold-create" role="main">--}%
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
         </g:if>
@@ -32,6 +32,7 @@
 				</g:eachError>
             </ul>
 		</g:hasErrors>
+
         <g:form url="[resource:photoInstance, action:'save']" enctype="multipart/form-data">
             <fieldset class="form">
                 <g:render template="form"/>
@@ -40,6 +41,6 @@
                 <g:submitButton name="create" class="save" value="Upload" style="background-color: #838384;border: none; height:40px; width:250px; color: #ffffff"/>
             </div>
         </g:form>
-	</div>
+	%{--</div>--}%
     </body>
 </html>

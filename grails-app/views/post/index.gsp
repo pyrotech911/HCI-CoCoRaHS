@@ -8,8 +8,8 @@
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>
-  <div class="map" id="map" style="width:500px;height:400px;">
-  </div>
+  %{--<div class="map" id="map" style="width:500px;height:400px;">--}%
+  %{--</div>--}%
   %{--<div class="container-fluid">--}%
       %{--<div class="addedit">--}%
         %{--<g:link class="create" action="create" id="${postInstance?.stationId}" >--}%
@@ -17,8 +17,7 @@
         %{--</g:link>--}%
       %{--</div>--}%
    %{--</div>--}%
-    %{--<div class="map" id="map" style="width:500px;height:400px;">--}%
-    %{--</div>--}%
+    <div class="map" id="map" style="width:500px;height:400px;"></div>
     <div class="addedit">
       <table>
       	<tr>

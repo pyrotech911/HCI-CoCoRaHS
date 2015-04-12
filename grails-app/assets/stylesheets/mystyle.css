@@ -81,22 +81,34 @@ table {
     font-size: 18px;
     font-family: sans-serif;
     font-style: italic;
-    /*height: 50px;*/
-    /*padding-left: 50px;*/
+    height: 50%;
+    padding-left: 0%;
     text-align: center;
     justify-content: center;
 }
+
+.photoLink{
+    margin-left: calc(50%-80px);
+    /*width: 300px;*/
+    text-align: center;
+    /*color: #ffffff;*/
+    font-size: 25px;
+    border: none;
+}
+
 
 .subButton{
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    margin: 0.25em 35.4em 0;  /* change this absolute margin*/
+    /*margin: 0.25em 35.4em 0;  *//* change this absolute margin*/
     text-align: center;
     overflow: visible;
     font-size: 18px;
     font-family: sans-serif;
     font-style: normal;
+    padding-left: 0%;
+    margin-left: calc(50% - 115px);
     /*padding: 0.25em 0.7em;*/
     text-decoration: none;
     -moz-border-radius: 10px;

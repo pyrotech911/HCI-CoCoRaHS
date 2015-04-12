@@ -38,8 +38,7 @@ class PhotoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'photo.label', default: 'Photo'), photoInstance.id])
-                redirect photoInstance
+                redirect (controller: 'station', action:'index')
             }
             '*' { respond photoInstance, [status: CREATED] }
         }
