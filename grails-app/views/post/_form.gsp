@@ -1,8 +1,8 @@
 <%@ page import="cocorahs.Post" %>
 
-
 <asset:stylesheet src="application.css"/>
 <asset:stylesheet src="mystyle.css"/>
+
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photos', 'error')} ">
 
 	%{--<label for="photos">--}%
@@ -47,22 +47,23 @@
 %{--Added by Dnyanesh --}%
 %{--Comment field in POST form--}%
 
-%{--<div class="fieldcontain" ${hasErrors(bean: postInstance, field: 'comment', 'error')} required">--}%
     <div class="textarea">
         <label for="comment">
          <span class="required-indicator">*</span>
         </label>
-        <g:textArea name="comment" placeholder="Location Notes" rows="5" cols="40"></g:textArea>
+        <g:if test="${postInstance.comment == null}">
+            <g:textArea name="comment" placeholder="Location Notes" rows="5" cols="40"></g:textArea>
+        </g:if>
+        <g:if test="${postInstance.comment != null}">
+            <g:textArea name="comment" value="${postInstance.comment}" rows="5" cols="40"></g:textArea>
+        </g:if>
+
     </div>
 
     <div class="subButton">
         <g:submitButton name="Submit" value="Post" style="background-color: #838384;border: none; height:40px; width:250px"></g:submitButton>
     </div>
 
-
-%{--</div>--}%
-%{--Post button--}%
-%{-------------------}%
 
 
 %{--<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'station', 'error')} required">--}%
@@ -71,8 +72,6 @@
 		%{--<span class="required-indicator">*</span>--}%
 	%{--</label>--}%
 	%{--<g:select id="station" name="station.id" from="${cocorahs.Station.list()}" optionKey="id" required="" value="${postInstance?.station?.id}" class="many-to-one"/>--}%
-
-
 %{--</div>--}%
 
 

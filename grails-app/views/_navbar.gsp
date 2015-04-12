@@ -1,5 +1,6 @@
 <head>
 	<asset:javascript src="goback.js"/>
+	<asset:stylesheet src="mystyle.css"/>
 </head>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
    <div class="container-fluid">
@@ -13,7 +14,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <button onclick="goBack()" class="back">Return</button>
+            <button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height="50" width="80"></button>
        </div>
  
        <!-- Collect the nav links, forms, and other content for toggling -->

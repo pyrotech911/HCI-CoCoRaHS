@@ -7,10 +7,26 @@
 	font-size: 30px;
 }
 
+.postList {
+	margin-left: calc(50% - 250px);
+	width: 500px;
+	font-size: 30px;
+}
+
+.postList > table {
+	border: 1px solid white;
+	text-align: left;
+}
+
+.postList > td {
+	border: 1px solid white;
+}
+
 table {
 	width: 500px;
 	margin-left: calc(50% - 250px);
 	text-align: center;
+	color: #FFF;
 }
 
 .settings {
@@ -58,6 +74,7 @@ table {
 	background-color: #729cc7;
 }
 
+/*<<<<<<< HEAD*/
 .textarea{
     background-color: transparent;
     border: 0px;
@@ -87,5 +104,27 @@ table {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-
 }
+
+/*=======*/
+.addedit {
+	color: #FFF;
+	font-size: 30px;	
+}
+
+.addedit.list {
+	background-color: #5c87b2;
+	text-align: center;
+	font-size: 30px;
+}
+
+.addedit > table {
+	border-collapse: collapse;
+	background-color: #838384;
+	border: 1px solid white;
+	padding: 3px;
+	border-spacing: 3px;
+	margin-bottom: 0px;
+	border-style: solid;
+}
+/*>>>>>>> 3c1794c5100b1ff0d8a6dd3af3fe60d6fbbb55dd*/

@@ -1,7 +1,6 @@
 package cocorahs
 
 class Post{
-    long    postId;
     private String  gpsLocation;
     private String  photoIds;
     String  comment;
