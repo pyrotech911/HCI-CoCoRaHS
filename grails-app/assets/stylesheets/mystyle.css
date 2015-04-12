@@ -88,11 +88,10 @@ table {
 }
 
 .subButton{
-    background-color: #add8e6;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    margin: 0.25em 35.8em 0;  /* change this absolute margin*/
+    margin: 0.25em 35.4em 0;  /* change this absolute margin*/
     text-align: center;
     overflow: visible;
     font-size: 18px;

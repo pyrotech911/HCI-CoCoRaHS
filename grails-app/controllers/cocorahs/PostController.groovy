@@ -121,4 +121,18 @@ class PostController {
             '*' { render status: NOT_FOUND }
         }
     }
+
+
+//    @Secured(['permitAll'])
+    def showPhoto(){
+        def postInstance = Post.get(params.id)
+        response.outputStream << postInstance.photo
+        response.outputStream.flush()
+    }
 }
+
+
+
+
+
+

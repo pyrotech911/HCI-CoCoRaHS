@@ -7,7 +7,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class PhotoController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -90,6 +90,7 @@ class PhotoController {
             '*' { render status: NO_CONTENT }
         }
     }
+
 
     protected void notFound() {
         request.withFormat {
