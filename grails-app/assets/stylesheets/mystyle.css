@@ -60,7 +60,7 @@ table {
 }
 
 .back {
-	background-color: #5c87b2;
+	background-color: #729cc7;
 	border: 0px;
 	color: #FFF;
 	font-size: 18px;
@@ -72,6 +72,37 @@ table {
 
 .back:hover {
 	background-color: #729cc7;
+}
+
+.textarea{
+    background-color: transparent;
+    border: 0px;
+    color: #838384; /*Grey*/
+    font-size: 18px;
+    font-family: sans-serif;
+    font-style: italic;
+    /*height: 50px;*/
+    /*padding-left: 50px;*/
+    text-align: center;
+    justify-content: center;
+}
+
+.subButton{
+    background-color: #add8e6;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0.25em 35.8em 0;  /* change this absolute margin*/
+    text-align: center;
+    overflow: visible;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-style: normal;
+    /*padding: 0.25em 0.7em;*/
+    text-decoration: none;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .addedit {

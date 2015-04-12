@@ -14,7 +14,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <button onclick="goBack()" class="back">Return</button>
+            <button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height="50" width="80"></button>
        </div>
  
        <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,8 +22,11 @@
             <ul class="nav navbar-nav navbar-right">
                   <li><form name="settings" method="POST" action=""> <input type="submit" value="Settings" height="100px" class="settings"></form></li>
                   <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="50px" class="logout"></form></li>
+
+
             </ul>
        </div><!-- /.navbar-collapse -->
- 
+
+
     </div><!-- /.container-fluid -->
 </nav>
