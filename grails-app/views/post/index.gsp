@@ -8,6 +8,16 @@
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>
+
+  <nav class="navbar" role="navigation">
+      <div class="container-fluid">
+          %{--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">--}%
+              <div class="navbar-header">
+                <g:message code="All Stations" />
+              %{--</div>--}%
+          %{--</div>--}%
+      </div>
+  </nav>
 %{--<<<<<<< HEAD--}%
   <div class="container-fluid">
       <div class="list">
@@ -16,13 +26,6 @@
         </g:link>
       </div>
    </div>
-    <div class="list">
-      <table>
-        <g:each in="${postList}">
-          <tr><td>${it.postId}(${it.comment})</td></tr>
-        </g:each>
-      </table>
-    </div>
 %{--=======--}%
     <div class="map" id="map" style="width:500px;height:400px;">
     </div>

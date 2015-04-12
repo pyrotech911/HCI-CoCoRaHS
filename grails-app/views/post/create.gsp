@@ -35,10 +35,6 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-                %{--removing default create button - DJ --}%
-				%{--<fieldset class="buttons">--}%
-					%{--<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />--}%
-				%{--</fieldset>--}%
 			</g:form>
 
 
