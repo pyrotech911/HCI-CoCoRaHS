@@ -2,6 +2,15 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'comment', 'error')} required">
+	<label for="comment">
+		<g:message code="post.comment.label" default="Comment" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="comment" required="" value="${postInstance?.comment}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photos', 'error')} ">
 	<label for="photos">
 		<g:message code="post.photos.label" default="Photos" />

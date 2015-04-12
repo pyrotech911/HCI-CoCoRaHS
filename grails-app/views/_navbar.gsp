@@ -1,5 +1,6 @@
 <head>
 	<asset:javascript src="goback.js"/>
+	<asset:stylesheet src="mystyle.css"/>
 </head>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
    <div class="container-fluid">

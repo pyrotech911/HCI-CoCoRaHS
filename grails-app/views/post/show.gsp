@@ -6,22 +6,26 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+        <asset:stylesheet src="mystyle.css"/>
 	</head>
 	<body>
 		<a href="#show-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		<g:render template="/navbar"/>
 		<div id="show-post" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list post">
+			
+				<g:if test="${postInstance?.comment}">
+				<li class="fieldcontain">
+					<span id="comment-label" class="property-label"><g:message code="post.comment.label" default="Comment" /></span>
+					
+						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${postInstance}" field="comment"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${postInstance?.photos}">
 				<li class="fieldcontain">
@@ -33,6 +37,7 @@
 					
 				</li>
 				</g:if>
+			
 			
 				<g:if test="${postInstance?.station}">
 				<li class="fieldcontain">

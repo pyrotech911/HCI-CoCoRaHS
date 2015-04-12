@@ -17,13 +17,13 @@ class PostController {
 		
 		if(debugIndex)
 		{
-			posts.each{ println it.postId + " " + it.comment }
+			posts.each{ println it.id + " " + it.comment }
 		}
 		
 		def postList = []
 		for(int i = 0; i < posts.size; i++) {
 			def postDetail = [:]
-			postDetail.put('postId',posts[i].postId)
+			postDetail.put('id',posts[i].id)
 			postDetail.put('comment', posts[i].comment)
 			postList << postDetail
 		}

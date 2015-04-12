@@ -10,8 +10,8 @@ class BootStrap {
 		def adminRole = new CocoRole(authority: 'ROLE_ADMIN').save(flush: true) 
 		def userRole = new CocoRole(authority: 'ROLE_USER').save(flush: true)
 		
-		def pst1 = new Post(postId:1,comment:"This is my first post!")
-		def pst2 = new Post(postId:2,comment:"This is a different post!")
+		def pst1 = new Post(comment:"This is my first post!")
+		def pst2 = new Post(comment:"This is a different post!")
 		
 		def st1 = new Station(stationId:"Station1",latitude:47.1122,longitude:-58.9657)
 			.addToPosts(pst1)

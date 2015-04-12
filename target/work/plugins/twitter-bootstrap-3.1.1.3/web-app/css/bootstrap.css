@@ -183,6 +183,11 @@ table {
 td,
 th {
   padding: 0;
+  border: 1px solid white;
+}
+
+td:last-child {
+	width: 20%;
 }
 @media print {
   * {
