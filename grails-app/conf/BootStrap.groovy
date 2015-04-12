@@ -13,15 +13,15 @@ class BootStrap {
 		def pst1 = new Post(comment:"This is my first post!")
 		def pst2 = new Post(comment:"This is a different post!")
 		
-		def st1 = new Station(stationId:"Station1",latitude:47.1183,longitude:-88.5471)
+		def st1 = new Station(stationId:"RehkiStation",latitude:47.1183,longitude:-88.5471)
 			.addToPosts(pst1)
 			
-		def st2 = new Station(stationId:"Station2",latitude:47.1182,longitude:-88.5460)
+		def st2 = new Station(stationId:"FisherStation",latitude:47.1182,longitude:-88.5460)
 			.addToPosts(pst2)
 			
 		def st3 = new Station(stationId:"Station3",latitude:24.9876,longitude:45.3333)
 				
-		def testUser = new CocoUser(username: 'test', enabled: true, password: 'test')
+		def testUser = new CocoUser(username: 'MTUTest', enabled: true, password: '98DCP')
 			.addToStations(st1)
 			.addToStations(st2)
 		    .save(flush: true, failOnError: true)
