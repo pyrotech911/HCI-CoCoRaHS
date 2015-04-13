@@ -4,29 +4,25 @@
 <asset:stylesheet src="mystyle.css"/>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photos', 'error')} ">
-	
-<ul class="one-to-many">
-    <g:each in="${postInstance.photos}" var="p">
-        <g:link controller="photo" action="show" id="${p.id}">
-            <img alt="Missing Photo" src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance.id}")}">
-        </g:link>
-    </g:each>
+    %{--<g:each in="${postInstance.photos}" var="p">--}%
+        %{--<g:link controller="photo" action="show" id="${p.id}">--}%
+            %{--<img alt="Missing Photo" src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance.id}")}">--}%
+        %{--</g:link>--}%
+    %{--</g:each>--}%
 
-<li class="add">
-    <div class="subButton">
-        <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 1</g:link>
+    <div class="photoLink">
+        <table>
+            <tr>
+                <td> <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 1  </g:link>
+                <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 2</g:link></td>
+            </tr>
 
-        <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 2</g:link>
+            <tr>
+                <td> <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 3  </g:link>
+                <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 4</g:link></td>
+            </tr>
+        </table>
     </div>
-
-    <div class="subButton">
-        <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 3</g:link>
-
-        <g:link controller="photo" action="create" params="['post.id': postInstance?.id]">photo 4</g:link>
-    </div>
-
-</li>
-</ul>
 </div>
 
 <div class="textarea">
@@ -45,15 +41,14 @@
     <g:submitButton name="Submit" value="Post" style="background-color: #838384;border: none; height:40px; width:250px"></g:submitButton>
 </div>
 
-
-
-%{--<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'station', 'error')} required">--}%
-	%{--<label for="station">--}%
-		%{--<g:message code="post.station.label" default="Station" />--}%
-		%{--<span class="required-indicator">*</span>--}%
-	%{--</label>--}%
-	%{--<g:select id="station" name="station.id" from="${cocorahs.Station.list()}" optionKey="id" required="" value="${postInstance?.station?.id}" class="many-to-one"/>--}%
-%{--</div>--}%
+<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'station', 'error')} required">
+    <div class="postList">
+	    <label for="station">
+		    <span class="required-indicator">*</span>
+	    </label>
+	    <g:select id="station" name="station.id" from="${cocorahs.Station.list()}" optionKey="id" required="" value="${postInstance?.station?.id}" class="many-to-one"/>
+    </div>
+</div>
 
 
 

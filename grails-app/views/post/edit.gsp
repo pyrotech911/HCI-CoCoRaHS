@@ -5,6 +5,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+        <script>window.onload = initGeolocation</script>
+        <asset:stylesheet src="mystyle.css"/>
 	</head>
 	<body>
 		<a href="#edit-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

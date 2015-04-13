@@ -9,7 +9,9 @@
 	    <g:select id="post" name="post.id" from="${cocorahs.Post.list()}" optionKey="id" required="" value="${photoInstance?.post?.id}" class="many-to-one"/>
 
         <div class="fieldcontain ${hasErrors(bean: photoInstance, field: 'photo', 'error')} ">
-            <input style="display:inline" type="file" name="photo" accept="image/*" capture "/>
+
+                <input style="display:inline" type="file" name="photo" accept="image/*" capture "/>
+
         </div>
     </div>
 </div>
