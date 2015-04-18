@@ -1,5 +1,6 @@
 package cocorahs
 
+import grails.plugin.springsecurity.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -33,7 +34,7 @@ class PhotoController {
             respond photoInstance.errors, view: 'create'
             return
         }
-
+        println("Photo saved " + photoInstance.id + " Size " + photoInstance.size)
         photoInstance.save flush: true
 
         request.withFormat {
@@ -90,6 +91,20 @@ class PhotoController {
         }
     }
 
+    @Secured(['permitAll'])
+    def showPhoto(){
+        def debugCover = true;
+        if(debugCover){
+            println " "
+            println "In showPhoto"
+            println "params.id: " + params.id
+        }
+        def photoInstance = Photo.get(params.id)
+        println "photo.size: " + photoInstance.size
+        response.outputStream << photoInstance.photo
+        response.outputStream.flush()
+
+    }
 
     protected void notFound() {
         request.withFormat {

@@ -7,16 +7,13 @@
   <script>
   var latlngarray = [];
   </script>
-    <script>window.onload = function() {
-        initGeolocation()
-    }</script>
+    <script>window.onload = function(){initGeolocation()}</script>
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="mystyle.css"/>
     <asset:javascript src="geolocation.js"/>
   </head>
   <body>
-  	<div class="map" id="map" style="width:100%;height:400px;">
-    </div>
+  	<div class="map" id="map" style="width:100%;height:400px;"></div>
     <div class="list">
       <table>
         <g:each in="${stationList}">

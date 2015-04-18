@@ -21,21 +21,15 @@
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<table>
-			<thead>
-					<tr>
-					
-						<th><g:message code="photo.post.label" default="Post" /></th>
-					
-					</tr>
-				</thead>
+			    <thead>
+					<tr><th><g:message code="photo.post.label" default="Post" /></th></tr>
+			    </thead>
 				<tbody>
-				<g:each in="${photoInstanceList}" status="i" var="photoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${photoInstance.id}">${fieldValue(bean: photoInstance, field: "post")}</g:link></td>
-					
-					</tr>
-				</g:each>
+				    <g:each in="${photoInstanceList}" status="i" var="photoInstance">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+						    <td><g:link action="show" id="${photoInstance.id}">${fieldValue(bean: photoInstance, field: "post")}</g:link></td>
+					    </tr>
+				    </g:each>
 				</tbody>
 			</table>
 			<div class="pagination">

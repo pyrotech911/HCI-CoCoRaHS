@@ -14,12 +14,38 @@
 }
 
 .postList > table {
-	border: 1px solid white;
+	border: none;
+    outline: none;
 	text-align: left;
 }
 
 .postList > td {
-	border: 1px solid white;
+	border: none;
+    outline: none;
+}
+.postList > tr {
+    border: 1px solid #ffffff;
+}
+
+.postImg{
+    background-image: url(/cocorahs/assets/site/PostSegment.svg);
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    /*width: auto;*/
+    /*height: 400%;*/
+}
+
+.newPostImg{
+    background-image: url(/cocorahs/assets/site/AddSegment.svg);
+    background-size: auto auto;
+    background-repeat: no-repeat;
+}
+
+.helpImg{
+    background-image: url(/cocorahs/assets/site/HelpButton.svg);
+    background-size: auto auto;
+    background-repeat: no-repeat;
 }
 
 table {
@@ -73,7 +99,7 @@ table {
 	background-color: #729cc7;
 }
 
-.textarea{
+.textArea{
     background-color: transparent;
     border: 0px;
     color: #838384; /*Grey*/
@@ -82,8 +108,12 @@ table {
     font-style: italic;
     height: 50%;
     padding-left: 0%;
+    padding-top: 5px;
     text-align: center;
     justify-content: center;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .photoLink{
@@ -93,8 +123,10 @@ table {
     /*color: #ffffff;*/
     font-size: 25px;
     border: none;
-}
+    outline: none;
+    border-collapse: collapse;
 
+}
 
 .subButton{
     color: #ffffff;
@@ -107,6 +139,7 @@ table {
     font-family: sans-serif;
     font-style: normal;
     padding-left: 0%;
+    padding-top: 5px;
     margin-left: calc(50% - 115px);
     /*padding: 0.25em 0.7em;*/
     text-decoration: none;
@@ -114,6 +147,50 @@ table {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
+
+.select{
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+.fileUpload{
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display:inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+
+
+
 
 .addedit {
 	color: #FFF;

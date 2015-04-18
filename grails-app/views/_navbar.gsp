@@ -14,19 +14,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height="100%" width="100%"></button>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height=110% width=auto></button></li>
+                </ul>
+            </div>
        </div>
- 
+
+       <p class="navbar-text" style="padding-left: 40%; color: #ffffff;font-size: 170%">${navTitle}</p>
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                  <li><form name="help" method="POST" action="${createLink(controller:'help') }"> <input type="submit" value="Help" height="100%" class="settings"></form></li>
+                  <li><form name="help" method="POST" action="${createLink(controller:'help')}"><input type="submit" value="Help" height="100%" class="settings"></form></li>
                   <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></li>
-
-
             </ul>
        </div><!-- /.navbar-collapse -->
-
-
     </div><!-- /.container-fluid -->
 </nav>

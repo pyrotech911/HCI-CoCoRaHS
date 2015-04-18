@@ -27,8 +27,8 @@
 				<li class="fieldcontain">
 					<span id="post-label" class="property-label"><g:message code="photo.post.label" default="Post" /></span>
 					
-						<span class="property-value" aria-labelledby="post-label"><g:link controller="post" action="show" id="${photoInstance?.post?.id}">${photoInstance?.post?.encodeAsHTML()}</g:link></span>
-					
+						%{--<span class="property-value" aria-labelledby="post-label"><g:link controller="post" action="show" id="${photoInstance?.post?.id}">${photoInstance?.post?.encodeAsHTML()}</g:link></span>--}%
+                        <img alt="Missing Cover" src="${createLink(controller:'photo', action:'showPhoto', id:"${photoInstance.id}")}">
 				</li>
 				</g:if>
 			

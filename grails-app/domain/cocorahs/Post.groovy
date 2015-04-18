@@ -7,13 +7,15 @@ class Post{
     private String  stationId;
     private String  userId;
     private Date    timeStamp;
-
+    byte[] photo
+    byte[] photo_s
 
     static belongsTo = [station : Station]
     static hasMany = [photos: Photo]
 
     static constraints = {
-
+        photo(nullable:true, maxSize:1024*1024*2)
+        photo_s(nullable:true, maxSize:1024*1024*2)
     }
 }
 

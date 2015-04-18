@@ -11,7 +11,8 @@
 	</head>
 	<body>
 		<a href="#edit-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<g:render template="/navbar"/>
+        <g:set var="navTitle" value="Update Post" scope="request"/>
+        <g:render template="/navbar"/>
 		<div id="edit-post" class="content scaffold-edit" role="main">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
@@ -23,7 +24,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:postInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:postInstance, action:'update']" method="POST" enctype="multipart/form-data">
 				<g:hiddenField name="version" value="${postInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
