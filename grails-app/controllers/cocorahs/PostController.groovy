@@ -130,7 +130,7 @@ class PostController {
 
 
     @Secured(['permitAll'])
-    def showPhoto() {
+    def showPhotoGauge() {
         def debugCover = false;
         if (debugCover) {
             println " "
@@ -138,12 +138,12 @@ class PostController {
             println "post.id: " + params.id
         }
         def post = cocorahs.Post.get(params.id)
-        response.outputStream << post.photo
+        response.outputStream << post.photo_gauge
         response.outputStream.flush()
     }
 
     @Secured(['permitAll'])
-    def showPhoto_S() {
+    def showPhotoSky() {
         def debugCover = false;
         if (debugCover) {
             println " "
@@ -151,9 +151,61 @@ class PostController {
             println "post.id: " + params.id
         }
         def post = cocorahs.Post.get(params.id)
-        response.outputStream << post.photo_s
+        response.outputStream << post.photo_sky
         response.outputStream.flush()
     }
+	
+	@Secured(['permitAll'])
+	def showPhotoNorth() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_north
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoSouth() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_south
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoEast() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_east
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoWest() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_west
+		response.outputStream.flush()
+	}
 
 
 }

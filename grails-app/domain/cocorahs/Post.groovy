@@ -6,16 +6,24 @@ class Post{
     String  comment;
     private String  stationId;
     private String  userId;
-    Date    timeStamp;
-    byte[] photo
-    byte[] photo_s
+    String    timeStamp;
+    byte[] photo_gauge
+    byte[] photo_sky
+	byte[] photo_north
+	byte[] photo_south
+	byte[] photo_east
+	byte[] photo_west
 
     static belongsTo = [station : Station]
-    static hasMany = [photos: Photo]
 
     static constraints = {
-        photo(nullable:true, maxSize:1024*1024*2)
-        photo_s(nullable:true, maxSize:1024*1024*2)
+        photo_gauge(nullable:true, maxSize:1024*1024*2)
+        photo_sky(nullable:true, maxSize:1024*1024*2)
+		photo_north(nullable:true, maxSize:1024*1024*2)
+		photo_south(nullable:true, maxSize:1024*1024*2)
+		photo_east(nullable:true, maxSize:1024*1024*2)
+		photo_west(nullable:true, maxSize:1024*1024*2)
+		timeStamp(nullable:true)
     }
 }
 

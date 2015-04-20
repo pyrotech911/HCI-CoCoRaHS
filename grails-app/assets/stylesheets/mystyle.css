@@ -197,20 +197,17 @@ table {
 
 div.fileinputs {
     position: relative;
-    margin-left: calc(50% - 250px);
 }
 
 div.fakefile {
     position: absolute;
-    margin-left: calc(50% - 250px);
-    top: 0px;
+    top: 15px;
     left: 0px;
     z-index: 1;
 }
 
 input.file {
     position: relative;
-    margin-left: calc(50% - 250px);
     text-align: right;
     -moz-opacity:0 ;
     filter:alpha(opacity: 0);
