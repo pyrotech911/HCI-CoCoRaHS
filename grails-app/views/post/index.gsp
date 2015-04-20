@@ -16,6 +16,7 @@
           <div class="newPostImg">
       	  <td style="border: none; outline: none">Make a new Post</td>
       	  <td style="border: none; outline: none"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 140%; font-weight: bold ">+</g:link></td>
+            %{--<td style="border: none; outline: none"><a href="${createLink(controller:'post', action: "create", params: "${params}")}"><img src="/cocorahs/assets/site/AddSegment.svg" style="padding-top: 0px;; height: 40%; width: 160%"></a></td>--}%
           </div>
       	</tr>
       </table>

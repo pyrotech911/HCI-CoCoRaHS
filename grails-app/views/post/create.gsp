@@ -13,10 +13,6 @@
 	<body>
     <g:set var="navTitle" value="Update Post" scope="request"/>
     <g:render template="/navbar"/>
-    %{--<ul id="nav">--}%
-        %{--<li style="color: #ffffff; font-size: 150%; padding-left: 50%" >Text</li>--}%
-    %{--</ul>--}%
-
     <div class="map" id="map" style="width:100%;height:400px;"></div>
 		<div id="create-post" class="content scaffold-create" role="main">
 			<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>

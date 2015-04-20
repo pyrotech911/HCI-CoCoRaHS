@@ -2,6 +2,8 @@
 
 <asset:stylesheet src="application.css"/>
 <asset:stylesheet src="mystyle.css"/>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script>window.onload = initGeolocation</script>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photo', 'error')} ">
      %{--<div class="photoLink">--}%
@@ -16,45 +18,62 @@
                 %{--</tr>--}%
             %{--</g:each>--}%
         %{--</table>--}%
+    %{--</div>--}%  
+
+
+    %{--<div class="photoLink">--}%
+        %{--<table border="0">--}%
+            %{--<tr>--}%
+                %{--<td style="border: none; outline: none">--}%
+                %{--<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photo', 'error')} ">--}%
+                        %{--<label for="photo">--}%
+                            %{--<img src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20% "/>--}%
+                            %{--<img src="${createLink(controller:'post', action:'showPhoto_S', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%"/>--}%
+                        %{--</label>--}%
+                %{--</div>--}%
+                %{--</td>--}%
+            %{--</tr>--}%
+        %{--</table>--}%
     %{--</div>--}%
+</div>
 
 
+<table style="border: none; outline: none">
+    <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
+    <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.latitude}   ${postInstance?.station?.longitude}</td></tr>
+    <tr><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Time:</td></tr>
+    <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff">HH: MM </td></tr>
+</table>
 
-    <div class="photoLink">
-        <table border="0">
-            <tr>
-                <td style="border: none; outline: none">
-                <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photo', 'error')} ">
-
-                        <label for="photo">
-                            <img alt="Missing Photo" src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance?.id}")}" width=30% height="70px">
-                            <img alt="Missing Photo" src="${createLink(controller:'post', action:'showPhoto_S', id:"${postInstance?.id}")}" width=30% height="70px">
-
-                            <input style="display:inline" type="file" name="photo" accept="image/*" capture "/>
-                            <input style="display:inline" type="file" name="photo_s" accept="image/*" capture "/>
-                        </label>
-
-                </div>
-                </td>
-            </tr>
-        </table>
+<div class="fileinputs">
+    <input type="file" name="photo" class="file"  style="width: 100px; height: 100px; display: inline; padding-top: 5%"  accept="image/*" capture "/>
+    <div class="fakefile">
+        <img src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
     </div>
 </div>
+
+<div class="fileinputs">
+    <input type="file" name="photo_s" class="file"  style="width: 100px; height: 100px; display: inline; padding-top: 5%; padding-left: calc(50%-250px)"  accept="image/*" capture "/>
+    <div class="fakefile">
+        <img src="${createLink(controller:'post', action:'showPhoto_S', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%; padding-left: calc(50%-250px)"/>
+    </div>
+</div>
+
 
 <div class="textArea">
     <label for="comment">
         <span class="required-indicator">*</span>
     </label>
     <g:if test="${postInstance.comment == null}">
-        <g:textArea name="comment" placeholder="Location Notes" rows="5" cols="50" onfocus="true"></g:textArea>
+        <g:textArea name="comment" placeholder="Location Notes" rows="5" cols="50" onfocus="true" style="border-radius: 4%"></g:textArea>
     </g:if>
     <g:if test="${postInstance.comment != null}">
-        <g:textArea name="comment" value="${postInstance?.comment}" rows="5" cols="40" onfocus="true"></g:textArea>
+        <g:textArea name="comment" value="${postInstance?.comment}" rows="5" cols="40" onfocus="true" style="border-radius: 4%"></g:textArea>
     </g:if>
 </div>
 
 <div class="subButton">
-    <g:submitButton name="Submit" value="Post" style="background-color: #838384;border: 1px; height:40px; width:250px" ></g:submitButton>
+    <g:submitButton name="Submit" value="Post" style="background-color: #838384;border: 1px; height:40px; width:250px; border-radius: 4% " ></g:submitButton>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'station', 'error')} required">
@@ -62,7 +81,5 @@
 	        <g:select id="station" name="station.id" from="${cocorahs.Station.list()}" optionKey="id" required="" value="${postInstance?.station?.id}" class="many-to-one" />
        </div>
 </div>
-
-
 
 

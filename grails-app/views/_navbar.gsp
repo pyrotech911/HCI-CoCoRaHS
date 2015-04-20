@@ -25,9 +25,15 @@
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                  <li><form name="help" method="POST" action="${createLink(controller:'help')}"><input type="submit" value="Help" height="100%" class="settings"></form></li>
-                  <li><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></li>
+                  <table>
+                    <tr>
+                        <td style="border: none; outline: none; width: auto;"><a href="${createLink(controller:'help')}"><img src="/cocorahs/assets/site/HelpButton.svg" style="height: 40px; padding-top: 0px"></a></td>
+                        <td style="border: none; outline: none; width: auto"><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></td>
+                    </tr>
+                  </table>
             </ul>
        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+%{--<li><form name="help" method="POST" action="${createLink(controller:'help')}"><input type="submit" value="Help" height="100%" class="settings"></form></li>--}%
