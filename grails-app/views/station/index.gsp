@@ -13,6 +13,7 @@
     <asset:javascript src="geolocation.js"/>
   </head>
   <body>
+    <g:set var="navTitle" value="Select Station" scope="request"/>
   	<div class="map" id="map" style="width:100%;height:400px;"></div>
     <div class="list">
       <table>

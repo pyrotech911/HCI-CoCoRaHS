@@ -6,7 +6,7 @@ class Post{
     String  comment;
     private String  stationId;
     private String  userId;
-    private Date    timeStamp;
+    Date    timeStamp;
     byte[] photo
     byte[] photo_s
 

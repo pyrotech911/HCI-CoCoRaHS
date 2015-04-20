@@ -8,16 +8,12 @@
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>
-  <g:set var="navTitle" value="All Stations" scope="request"/>
+  <g:set var="navTitle" value="View/Create Posts" scope="request"/>
   <div class="map" id="map" style="width:100%;height:400px;"></div>
     <div class="addedit">
       <table style="border: none; outline: none">
       	<tr style="border-bottom: 1px solid #ffffff">
-          <div class="newPostImg">
-      	  <td style="border: none; outline: none">Make a new Post</td>
-      	  <td style="border: none; outline: none"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 140%; font-weight: bold ">+</g:link></td>
-            %{--<td style="border: none; outline: none"><a href="${createLink(controller:'post', action: "create", params: "${params}")}"><img src="/cocorahs/assets/site/AddSegment.svg" style="padding-top: 0px;; height: 40%; width: 160%"></a></td>--}%
-          </div>
+      	    <td style="border: none; outline: none"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 100%; font-weight: bold ">Make a New Post</g:link></td>
       	</tr>
       </table>
     </div>
