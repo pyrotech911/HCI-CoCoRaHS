@@ -1,18 +1,17 @@
 <html>
   <head>
     <title>Help</title>
+    <meta name='layout' content='site'/>
     <asset:stylesheet src="mystyle.css"/>
     <asset:stylesheet src="application.css"/>
   </head>
   <body>
-    <div class="helpheader">
-      <h1>Instructions</h1>
-    </div>
+    <g:set var="navTitle" value="Instructions" scope="request"/>
     <div class="helpbody">
-      <table>
+      <table class="helptable">
         <tr>
-          <td>1.  Select your station out of list of stations.</td>
-          <td>(Picture goes here)</td>
+          <td class="helpentry">1.  Select your station out of list of stations.</td>
+          <td class="hellpentry">(Picture goes here)</td>
         </tr>
         <tr>
           <td>(Picture goes here)</td>
