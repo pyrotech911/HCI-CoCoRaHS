@@ -5,6 +5,13 @@
     <title>Post</title>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script>window.onload = initGeolocation</script>
+    <script>
+        var latlngarray = [];
+        latlngarray[0] = ${latlng[0].lat};
+        latlngarray[1] = ${latlng[0].lon};
+        latlngarray[2] = "${latlng[0].name}";
+        console.log(latlngarray[2]);
+    </script>
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>

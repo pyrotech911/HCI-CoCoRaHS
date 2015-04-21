@@ -28,7 +28,15 @@ class PostController {
             postDetail.put('comment', posts[i].comment)
             postList << postDetail
         }
-        [postList: postList]
+		
+		def latlng = []
+		def latlngDetail = [:]
+		latlngDetail.put('lat', currStation[0].latitude)
+		latlngDetail.put('lon', currStation[0].longitude)
+		latlngDetail.put('name', currStation[0].stationId)
+		latlng << latlngDetail
+		
+        [postList: postList, latlng: latlng]
     }
 
     def list(Integer max) {

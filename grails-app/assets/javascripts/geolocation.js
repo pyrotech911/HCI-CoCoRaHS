@@ -57,9 +57,9 @@ function placeMarkersStation(map) {
 }
 
 function placeMarkersPost(map) {
-	var latlng = new google.maps.LatLng(latlngarray[index], latlngarray[index + 1]);
-	marker[index / 3] = new google.maps.Marker({
+	var latlng = new google.maps.LatLng(latlngarray[0], latlngarray[1]);
+	var marker = new google.maps.Marker({
 		position: latlng,
 	    map:map,
-	    title:latlngarray[index + 2]});
+	    title:latlngarray[2]});
 }
