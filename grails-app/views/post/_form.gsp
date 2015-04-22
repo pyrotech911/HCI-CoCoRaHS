@@ -9,39 +9,6 @@
 	getTime()
 	}</script>
 
-<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photo', 'error')} ">
-     <div class="photoLink">
-        <table>
-            <g:each in="${postInstance.photos}" var="p" status="i">
-                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                    <td>
-                        <g:link controller="photo" action="show" id="${p.id}">
-                            <img alt="Missing Photo" src="${createLink(controller:'photo', action:'showPhoto', id:"${p.id}")}" width="50" height="50">
-                        </g:link>
-                    </td>
-                </tr>
-            </g:each>
-        </table>
-    </div>  
-
-
-    <div class="photoLink">
-        <table border="0">
-            <tr>
-                <td style="border: none; outline: none">
-                <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'photo', 'error')} ">
-                        <label for="photo">
-                            <img src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20% "/>
-                            <img src="${createLink(controller:'post', action:'showPhoto_S', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%"/>
-                        </label>
-                </div>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-
 <table style="border: none; outline: none">
     <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
     <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.latitude}   ${postInstance?.station?.longitude}</td></tr>

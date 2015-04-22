@@ -23,11 +23,13 @@
           <tr style="border-bottom: 1px solid #ffffff">
               <td style="outline: none; border: none">
                   <div class="postImg">
-                  <g:link controller="post" action="show" style="color: #ffffff" id="${it.id}">${it.comment}</g:link>
+                  <g:link controller="post" action="show" style="color: #ffffff; align-items: center" id="${it.id}">${it.comment}</g:link>
                   </div>
               </td>
               <td style="border: none; outline: none">
-                  <g:link controller="post" action="edit" id="${it.id}" style="color: #ffffff">Edit</g:link>
+                  %{--<g:link controller="post" action="edit" id="${it.id}" style="color: #ffffff">Edit</g:link>--}%
+                  <a href="${createLink(controller:'post', action: 'edit',id:"${it.id}" )}"><img src="/cocorahs/assets/site/Edit.svg" style="height: 40px; padding-top: 0px"></a>
+
               </td>
           </tr>
         </g:each>

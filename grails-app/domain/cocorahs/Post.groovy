@@ -16,6 +16,7 @@ class Post{
     static constraints = {
         photo(nullable:true, maxSize:1024*1024*2)
         photo_s(nullable:true, maxSize:1024*1024*2)
+        timeStamp(nullable: true)
     }
 }
 

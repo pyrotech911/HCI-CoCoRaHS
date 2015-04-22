@@ -12,56 +12,25 @@
 		<a href="#show-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<g:render template="/navbar"/>
 		<div id="show-post" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
+        <g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
 			<ol class="property-list post">
-			
-				<g:if test="${postInstance?.comment}">
-				<li class="fieldcontain">
-					<span id="comment-label" class="property-label"><g:message code="post.comment.label" default="Comment" /></span>
-					
-						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${postInstance}" field="comment"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postInstance?.photos}">
-				<li class="fieldcontain">
-					<span id="photos-label" class="property-label"><g:message code="post.photos.label" default="Photos" /></span>
-					
-						<g:each in="${postInstance.photos}" var="p">
-						<span class="property-value" aria-labelledby="photos-label"><g:link controller="photo" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-			
-				<g:if test="${postInstance?.station}">
-				<li class="fieldcontain">
-					<span id="station-label" class="property-label"><g:message code="post.station.label" default="Station" /></span>
-					
-						<span class="property-value" aria-labelledby="station-label"><g:link controller="station" action="show" id="${postInstance?.station?.id}">${postInstance?.station?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+
+
+                <table style="border: none; outline: none">
+                    <g:if test="${postInstance?.station}">
+                        <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
+                        <tr><td style="color: #ffffff; font-size: 25px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.encodeAsHTML()}</td></tr>
+                    </g:if>
+                    <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
+                    <tr><td style="color: #ffffff; font-size: 25px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.latitude}   ${postInstance?.station?.longitude}</td></tr>
+                    <tr><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Time:</td></tr>
+                    <tr><td style="color: #ffffff; font-size: 25px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff"><p id="time"></p></td></tr>
+                    <g:if test="${postInstance?.comment}">
+                        <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Comment:  </td></tr>
+                        <tr><td style="color: #ffffff; font-size: 25px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.comment}</td></tr>
+                    </g:if>
+                </table>
 			</ol>
-			%{--<g:form url="[resource:postInstance, action:'delete']" method="DELETE">--}%
-				%{--<fieldset class="buttons">--}%
-					%{--<g:link class="edit" action="edit" resource="${postInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--}%
-					%{--<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />--}%
-				%{--</fieldset>--}%
-			%{--</g:form>--}%
-
-            <g:if test="${postInstance?.photos}">
-                <li class="fieldcontain">
-                  <img alt="Missing Photo" src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance.id}")}">
-                </li>
-            </g:if>
-
-    </div>
+        </div>
 	</body>
 </html>
