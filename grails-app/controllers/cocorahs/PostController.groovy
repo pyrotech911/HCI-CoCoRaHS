@@ -28,7 +28,15 @@ class PostController {
             postDetail.put('comment', posts[i].comment)
             postList << postDetail
         }
-        [postList: postList]
+		
+		def latlng = []
+		def latlngDetail = [:]
+		latlngDetail.put('lat', currStation[0].latitude)
+		latlngDetail.put('lon', currStation[0].longitude)
+		latlngDetail.put('name', currStation[0].stationId)
+		latlng << latlngDetail
+		
+        [postList: postList, latlng: latlng]
     }
 
     def list(Integer max) {
@@ -38,6 +46,27 @@ class PostController {
 
     def show(Post postInstance) {
         respond postInstance
+    }
+
+    @Transactional
+    def retSta(Post postInstance){
+        if (postInstance == null) {
+            notFound()
+            return
+        }
+
+        if (postInstance.hasErrors()) {
+            respond postInstance.errors, view: 'create'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
+                redirect(controller: "station", action: "index")
+            }
+            '*' { respond postInstance, [status: OK] }
+        }
     }
 
     def create() {
@@ -65,8 +94,8 @@ class PostController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
-                redirect(controller: "station", action: "index")
+//                flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
+                redirect(controller: "post", action: "show", id: postInstance?.id)
             }
             '*' { respond postInstance, [status: CREATED] }
         }
@@ -92,8 +121,8 @@ class PostController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Post.label', default: 'Post'), postInstance.id])
-                redirect(controller: 'station', action: 'index')
+//                flash.message = message(code: 'default.updated.message', args: [message(code: 'Post.label', default: 'Post'), postInstance.id])
+                redirect(controller: "post", action: "show", id: postInstance?.id)
             }
             '*' { respond postInstance, [status: OK] }
         }
@@ -130,7 +159,7 @@ class PostController {
 
 
     @Secured(['permitAll'])
-    def showPhoto() {
+    def showPhotoGauge() {
         def debugCover = false;
         if (debugCover) {
             println " "
@@ -138,12 +167,12 @@ class PostController {
             println "post.id: " + params.id
         }
         def post = cocorahs.Post.get(params.id)
-        response.outputStream << post.photo
+        response.outputStream << post.photo_gauge
         response.outputStream.flush()
     }
 
     @Secured(['permitAll'])
-    def showPhoto_S() {
+    def showPhotoSky() {
         def debugCover = false;
         if (debugCover) {
             println " "
@@ -151,9 +180,65 @@ class PostController {
             println "post.id: " + params.id
         }
         def post = cocorahs.Post.get(params.id)
-        response.outputStream << post.photo_s
+        response.outputStream << post.photo_sky
         response.outputStream.flush()
     }
+	
+	@Secured(['permitAll'])
+	def showPhotoNorth() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_north
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoSouth() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_south
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoEast() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_east
+		response.outputStream.flush()
+	}
+	
+	@Secured(['permitAll'])
+	def showPhotoWest() {
+		def debugCover = false;
+		if (debugCover) {
+			println " "
+			println "In showPhoto"
+			println "post.id: " + params.id
+		}
+		def post = cocorahs.Post.get(params.id)
+		response.outputStream << post.photo_west
+		response.outputStream.flush()
+	}
+
+//    def redirectSta{
+//        redirect  controller: "station", action: "index"
+//    }
 
 
 }

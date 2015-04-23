@@ -16,30 +16,90 @@
     <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff"><p id="time"></p></td></tr>
 </table>
 
-<div class="fileinputs">
-    <input type="file" name="photo" class="file"  style="width: 100px; height: 100px; display: inline; padding-top: 5%"  accept="image/*" capture "/>
-    <div class="fakefile">
-        <img src="${createLink(controller:'post', action:'showPhoto', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
-    </div>
-</div>
-
-<div class="fileinputs">
-    <input type="file" name="photo_s" class="file"  style="width: 100px; height: 100px; display: inline; padding-top: 5%; padding-left: calc(50%-250px)"  accept="image/*" capture "/>
-    <div class="fakefile">
-        <img src="${createLink(controller:'post', action:'showPhoto_S', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%; padding-left: calc(50%-250px)"/>
-    </div>
-</div>
-
+<table>
+    <tr>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>Gauge View</p>
+                <input type="file" name="photo_gauge" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoGauge', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>Sky View</p>
+                <input type="file" name="photo_sky" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoSky', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>North View</p>
+                <input type="file" name="photo_north" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoNorth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>South View</p>
+                <input type="file" name="photo_south" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoSouth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>East View</p>
+                <input type="file" name="photo_east" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoEast', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: 100px; border: 0px;">
+            <div class="fileinputs">
+                <p>West View</p>
+                <input type="file" name="photo_west" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <div class="fakefile">
+                    <img src="${createLink(controller:'post', action:'showPhotoWest', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: calc(50% - 100px); border: 0px">
+        </td>
+    </tr>
+</table>
 
 <div class="textArea">
     <label for="comment">
         <span class="required-indicator">*</span>
     </label>
     <g:if test="${postInstance.comment == null}">
-        <g:textArea name="comment" placeholder="Location Notes" rows="5" cols="50" onfocus="true" style="border-radius: 4%"></g:textArea>
+        <g:textArea name="comment" autofocus="true" placeholder="Location Notes" rows="5" cols="50" onfocus="true" style="border-radius: 4%"></g:textArea>
     </g:if>
     <g:if test="${postInstance.comment != null}">
-        <g:textArea name="comment" value="${postInstance?.comment}" rows="5" cols="40" onfocus="true" style="border-radius: 4%"></g:textArea>
+        <g:textArea name="comment" autofocus="true" value="${postInstance?.comment}" rows="5" cols="40" onfocus="true" style="border-radius: 4%"></g:textArea>
     </g:if>
 </div>
 
@@ -54,5 +114,5 @@
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'timeStamp', 'error')} required">
-    <g:field name="timeStamp" type="hidden" value="${new Date()}"></g:field>
+    <g:field name="timeStamp" type="hidden" value="${new Date();}"></g:field>
 </div>

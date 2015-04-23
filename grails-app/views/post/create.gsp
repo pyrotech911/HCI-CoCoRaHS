@@ -31,5 +31,3 @@
 		</div>
 	</body>
 </html>
-%{--id:postInstance?.stationId--}%
-%{--enctype="multipart/form-data"--}%
