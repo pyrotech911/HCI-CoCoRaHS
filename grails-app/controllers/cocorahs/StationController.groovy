@@ -20,13 +20,13 @@ class StationController {
 		
 		if(debugIndex)
 		{
-			stations.each{ println it.id + " " + it.stationId }
+			stations.each{ println it.id + " " + it.stationName }
 		}
 		
 		def stationList = []
 		for(int i = 0; i < stations.size; i++) {
 			def stationDetail = [:]
-			stationDetail.put('stationId', stations[i].stationId)
+			stationDetail.put('stationId', stations[i].stationName)
 			stationDetail.put('longitude', stations[i].longitude)
 			stationDetail.put('latitude', stations[i].latitude)
 			stationDetail.put('id', (stations[i].id).toString())

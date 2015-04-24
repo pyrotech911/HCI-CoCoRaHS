@@ -33,7 +33,7 @@ class PostController {
 		def latlngDetail = [:]
 		latlngDetail.put('lat', currStation[0].latitude)
 		latlngDetail.put('lon', currStation[0].longitude)
-		latlngDetail.put('name', currStation[0].stationId)
+		latlngDetail.put('name', currStation[0].stationName)
 		latlng << latlngDetail
 		
         [postList: postList, latlng: latlng]
@@ -62,8 +62,10 @@ class PostController {
 
         request.withFormat {
             form multipartForm {
+                def par = [:]
+                par.put("stID", postInstance.stationId)
                 flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
-                redirect(controller: "station", action: "index")
+                redirect(controller: "post", action: "index", params: par)
             }
             '*' { respond postInstance, [status: OK] }
         }

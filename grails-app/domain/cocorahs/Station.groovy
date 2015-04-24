@@ -1,7 +1,7 @@
 package cocorahs
 
 class Station{
-    String stationId;
+    String stationName;
 	float latitude;
 	float longitude;
     public String postIds;
@@ -16,7 +16,7 @@ class Station{
     }
 	
 	String toString(){
-		"${stationId}"
+		"${stationName}"
 	   }
 }
 

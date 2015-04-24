@@ -4,7 +4,7 @@ class Post{
     private String  gpsLocation;
     private String  photoIds;
     String  comment;
-    private String  stationId;
+    private String  statId;
     private String  userId;
     String    timeStamp;
     byte[] photo_gauge
