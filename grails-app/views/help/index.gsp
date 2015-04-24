@@ -11,7 +11,7 @@
       <table class="helptable">
         <tr>
           <td class="helpentry">1.  Select your station out of list of stations.</td>
-          <td class="hellpentry">(Picture goes here)</td>
+          <td class="helpentry">(Picture goes here)</td>
         </tr>
         <tr>
           <td>(Picture goes here)</td>

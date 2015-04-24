@@ -257,7 +257,6 @@ input.file {
 }
 
 .helpbody {
-	background-color: #000;
 	color: #FFF;
 	font-size: 16px;
 }
@@ -275,4 +274,82 @@ input.file {
 
 a {
 	text-decoration: underline;
+}
+
+.addPost {
+    border-collapse: separate;
+    padding-top: 10px;
+    padding-left: 1%;
+    width: 99%;	
+	font-size: 30px;
+}
+
+.addButton {
+	border: 3px outset black;
+	background: #838384;
+}
+
+.addButton:hover {
+	border: 3px outset gray;
+	background: #939394;
+}
+
+.addButton:active {
+	border: 3px inset gray;
+}
+
+.postList{
+    border-collapse: separate;
+    padding-top: 10px;
+	font-size: 30px;
+	border-spacing: 5px;
+}
+
+.postEntry {
+	border: 3px outset black;
+	background: #838384;
+}
+
+.postEntry:hover {
+	border: 3px outset gray;
+	background: #939394;
+}
+
+.postEntry:active {
+	border: 3px inset gray;
+}
+
+.postEdit {
+	border: 3px outset black;
+	background: #838384;
+}
+
+.postEdit:hover {
+	border: 3px outset gray;
+	background: #939394;
+}
+
+.postEdit:active {
+	border: 3px inset gray;
+}
+
+.stationList {
+    border-collapse: separate;
+    padding-top: 10px;
+	font-size: 30px;
+	border-spacing: 5px;
+}
+
+.stationEntry {
+	border: 3px outset black;
+	background: #838384;
+}
+
+.stationEntry:hover {
+	border: 3px outset gray;
+	background: #939394;
+}
+
+.stationEntry:active {
+	border: 3px inset gray;
 }

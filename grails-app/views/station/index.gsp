@@ -13,10 +13,14 @@
   <body>
     <g:set var="navTitle" value="Select Station" scope="request"/>
   	<div class="map" id="map" style="width:100%;height:400px;"></div>
-    <div class="list">
-      <table>
+      <table class="stationList">
         <g:each in="${stationList}">
-          <tr><td><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (${it.latitude},${it.longitude})</g:link></td></tr>
+          <g:if test="${it.latitude} != null && ${it.longitude} != null">
+            <tr><td class="stationEntry"><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (${it.latitude},${it.longitude})</g:link></td></tr>
+          </g:if>
+          <g:else>
+            <tr><td class="stationEntry"><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (Location Unknown)</g:link></td></tr>
+          </g:else>
           <script>
             latlngarray[latlngarray.length] = ${it.latitude}
             latlngarray[latlngarray.length] = ${it.longitude}
@@ -28,6 +32,5 @@
           </script>
         </g:each>
       </table>
-    </div>
   </body>
 </html>

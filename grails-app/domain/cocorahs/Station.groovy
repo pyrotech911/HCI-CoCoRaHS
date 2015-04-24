@@ -12,7 +12,8 @@ class Station{
     static hasMany = [posts : Post]
 
     static constraints = {
-		
+		latitude nullable: true
+		longitude nullable: true
     }
 	
 	String toString(){

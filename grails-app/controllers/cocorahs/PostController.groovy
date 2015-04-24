@@ -25,7 +25,12 @@ class PostController {
         for (int i = 0; i < posts.size; i++) {
             def postDetail = [:]
             postDetail.put('id', posts[i].id)
-            postDetail.put('comment', posts[i].comment)
+			if(posts[i].comment.length() > 100) {
+				String details = posts[i].comment.substring(0, 100) + "..."
+				postDetail.put('comment', details)
+			} else {
+                postDetail.put('comment', posts[i].comment)
+			}
             postList << postDetail
         }
 		

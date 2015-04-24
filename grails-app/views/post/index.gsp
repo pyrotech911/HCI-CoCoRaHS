@@ -17,30 +17,26 @@
   <body>
   <g:set var="navTitle" value="View/Create Posts" scope="request"/>
   <div class="map" id="map" style="width:100%;height:400px;"></div>
-    <div class="addedit">
-      <table style="border: none; outline: none">
-      	<tr style="border-bottom: 1px solid #ffffff">
-      	    <td style="border: none; outline: none"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 100%; font-weight: bold ">Make a New Post</g:link></td>
-      	</tr>
-      </table>
-    </div>
-    <div class="postList">
-      <table>
-        <g:each in="${postList}">
-          <tr style="border-bottom: 1px solid #ffffff">
-              <td style="outline: none; border: none">
-                  <div class="postImg">
-                  <g:link controller="post" action="show" style="color: #ffffff; align-items: center" id="${it.id}">${it.comment}</g:link>
-                  </div>
-              </td>
-              <td style="border: none; outline: none">
-                  %{--<g:link controller="post" action="edit" id="${it.id}" style="color: #ffffff">Edit</g:link>--}%
-                  <a href="${createLink(controller:'post', action: 'edit',id:"${it.id}" )}"><img src="/cocorahs/assets/site/Edit.svg" style="height: 40px; padding-top: 0px"></a>
-
-              </td>
-          </tr>
-        </g:each>
-      </table>
-    </div>
+    <table class="addPost">
+      <tr style="border-bottom: 1px solid #ffffff">
+        <td class="addButton"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 100%; font-weight: bold ">Make a New Post</g:link></td>
+      </tr>
+    </table>
+    <hr />
+    <table class="postList">
+      <g:each in="${postList}">
+        <tr style="border-bottom: 1px solid #ffffff">
+          <td class="postEntry">
+            <div class="postImg">
+              <g:link controller="post" action="show" style="color: #ffffff; align-items: center" id="${it.id}">${it.comment}</g:link>
+            </div>
+          </td>
+          <td class="postEdit">
+            <g:link controller="post" action="edit" id="${it.id}" style="color: #ffffff">Edit</g:link>
+            <a href="${createLink(controller:'post', action: 'edit',id:"${it.id}" )}"><img src="/cocorahs/assets/site/Edit.svg" style="height: 40px; padding-top: 0px"></a>
+          </td>
+        </tr>
+      </g:each>
+    </table>
   </body>
 </html>

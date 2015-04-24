@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="/layout" content="/site">
 		<g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
