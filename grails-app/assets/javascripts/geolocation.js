@@ -17,9 +17,9 @@ function errorCallback() {}
 function successCallback(position) {
   var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var map_options = {
-    zoom: 17,
-    center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  zoom: 17,
+	  center: myLatlng,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map_container = document.getElementById('map');
   map = new google.maps.Map(map_container, map_options);
@@ -29,7 +29,7 @@ function successCallback(position) {
   if (test > -1) {
 	  placeMarkersStation(map);
   } else {
-	  placeMarkersPost(map);
+	  placeMarkersPost(map, myLatlng);
   }
   
 }
@@ -37,6 +37,8 @@ function successCallback(position) {
 function placeMarkersStation(map) {
     var index;
     var marker = [];
+	map.setCenter(new google.maps.LatLng(latlngarray[0], latlngarray[1]));
+	map.setZoom(13);
     
 	for(index = 0; index < latlngarray.length; index = index + 4) {
 		console.log(latlngarray[index]);
@@ -56,10 +58,35 @@ function placeMarkersStation(map) {
 	}
 }
 
-function placeMarkersPost(map) {
-	var latlng = new google.maps.LatLng(latlngarray[0], latlngarray[1]);
-	var marker = new google.maps.Marker({
-		position: latlng,
-	    map:map,
-	    title:latlngarray[2]});
+function placeMarkersPost(map, myLatlng) {
+	var newmarkertest = window.location.href;
+	var test = newmarkertest.indexOf("create");
+	if (test > -1) {
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+			title: "New Station Location"
+		});
+		map.setCenter(myLatlng);
+
+		var element = document.getElementById("locTitle");
+		element.innerHTML = "New Station Location:";
+		var element = document.getElementById("locData");
+		element.innerHTML = myLatlng.lat().toString().concat(" ",myLatlng.lng().toString());
+
+		var element = document.getElementById("googleLat");
+		element.value = myLatlng.lat().toString();
+		var element = document.getElementById("googleLng");
+		element.value = myLatlng.lng().toString();
+	}
+	else {
+		var latlng = new google.maps.LatLng(latlngarray[0], latlngarray[1]);
+		var marker = new google.maps.Marker({
+			position: latlng,
+			map: map,
+			title: latlngarray[2]
+		});
+		map.setCenter(latlng);
+	}
+	map.setZoom(16);
 }

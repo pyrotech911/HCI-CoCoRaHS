@@ -2,6 +2,8 @@ package cocorahs
 
 import grails.plugin.springsecurity.annotation.Secured
 
+import java.text.NumberFormat
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -95,6 +97,13 @@ class PostController {
             respond postInstance.errors, view: 'create'
             return
         }
+
+        def station = Station.get(postInstance.stationId)
+        NumberFormat formatter = NumberFormat.getInstance()
+        float fLat = formatter.parse(params.newLat)
+        float fLng = formatter.parse(params.newLng)
+        station.latitude = fLat
+        station.longitude = fLng
 
         postInstance.save flush: true
 

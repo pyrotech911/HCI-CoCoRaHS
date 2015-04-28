@@ -5,7 +5,10 @@
 		<g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
-        <script>window.onload = function(){initGeolocation()}</script>
+        <script>
+			window.onload = function(){initGeolocation()}
+
+		</script>
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="mystyle.css"/>
         <asset:javascript src="geolocation.js"/>

@@ -5,14 +5,16 @@
 <asset:javascript src="getTime.js"/>
 <asset:javascript src="imageUpload.js"/>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
-<script>window.onload = function() {
-	initGeolocation()
-	getTime()
-	}</script>
+<script>
+    window.onload = function() {
+        initGeolocation()
+        getTime()
+    }
+</script>
 
 <table style="border: none; outline: none">
-    <tr ><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
-    <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.latitude}   ${postInstance?.station?.longitude}</td></tr>
+    <tr><td id="locTitle" style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Location:  </td></tr>
+    <tr><td id="locData" style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%; border-bottom: solid #ffffff">${postInstance?.station?.latitude}   ${postInstance?.station?.longitude}</td></tr>
     <tr><td style="font-style: italic; color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%">Time:</td></tr>
     <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff"><p id="time"></p></td></tr>
 </table>
@@ -110,7 +112,7 @@
 </div>
 
 <div class="subButton">
-    <g:submitButton name="Submit" value="Post" style="background-color: #838384;border: 1px; height:40px; width:250px; border-radius: 4% " ></g:submitButton>
+    <g:submitButton class="confirmation" name="Submit" value="Post" style="background-color: #838384;border: 1px; height:40px; width:250px; border-radius: 4%" onclick="return confirm('Update your station location or post?')"></g:submitButton>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'station', 'error')} required">
@@ -122,3 +124,6 @@
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'timeStamp', 'error')} required">
     <g:field name="timeStamp" type="hidden" value="${new Date();}"></g:field>
 </div>
+
+<g:field name="newLat" id="googleLat" type="hidden" value="${postInstance?.station?.latitude}"></g:field>
+<g:field name="newLng" id="googleLng" type="hidden" value="${postInstance?.station?.longitude}"></g:field>
