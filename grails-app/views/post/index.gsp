@@ -15,7 +15,7 @@
     <asset:stylesheet src="mystyle.css"/>
   </head>
   <body>
-  <g:set var="navTitle" value="View/Create Posts" scope="request"/>
+  <g:set var="navTitle" value="View/Create Posts" scope="request" style="color: #ffffff;"/>
   <div class="map" id="map" style="width:100%;height:400px;"></div>
     <table class="addPost">
       <tr style="border-bottom: 1px solid #ffffff">
@@ -28,7 +28,10 @@
         <tr style="border-bottom: 1px solid #ffffff">
           <td class="postEntry">
             <div class="postImg">
-              <g:link controller="post" action="show" style="color: #ffffff; align-items: center" id="${it.id}">${it.comment}</g:link>
+              <div class="fileinputs" >
+                  <img id="uploadPreview1" src="${createLink(controller:'post', action:'showPhotoGauge', id:"${it.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=50px height=50px style="border-radius: 20%; margin-top: 5px; margin-bottom: 5px"/>
+                  <g:link controller="post" action="show" style="color: #ffffff; align-items: center" id="${it.id}">${it.comment}</g:link>
+              </div>
             </div>
           </td>
           <td class="postEdit">

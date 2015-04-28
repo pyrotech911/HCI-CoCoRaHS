@@ -17,12 +17,12 @@ class Post{
     static belongsTo = [station : Station]
 
     static constraints = {
-        photo_gauge(nullable:true, maxSize:1024*1024*2)
-        photo_sky(nullable:true, maxSize:1024*1024*2)
-		photo_north(nullable:true, maxSize:1024*1024*2)
-		photo_south(nullable:true, maxSize:1024*1024*2)
-		photo_east(nullable:true, maxSize:1024*1024*2)
-		photo_west(nullable:true, maxSize:1024*1024*2)
+        photo_gauge(nullable:true, maxSize:1024*1024*4)
+        photo_sky(nullable:true, maxSize:1024*1024*4)
+		photo_north(nullable:true, maxSize:1024*1024*4)
+		photo_south(nullable:true, maxSize:1024*1024*4)
+		photo_east(nullable:true, maxSize:1024*1024*4)
+		photo_west(nullable:true, maxSize:1024*1024*4)
 		timeStamp(nullable:true)
     }
 }

@@ -3,6 +3,7 @@
 <asset:stylesheet src="application.css"/>
 <asset:stylesheet src="mystyle.css"/>
 <asset:javascript src="getTime.js"/>
+<asset:javascript src="imageUpload.js"/>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script>window.onload = function() {
 	initGeolocation()
@@ -23,18 +24,18 @@
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>Gauge View</p>
-                <input type="file" name="photo_gauge" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage1" onchange="PreviewImage('1');" type="file" name="photo_gauge" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoGauge', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                    <img id="uploadPreview1" src="${createLink(controller:'post', action:'showPhotoGauge', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
                 </div>
             </div>
         </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>Sky View</p>
-                <input type="file" name="photo_sky" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage2" onchange="PreviewImage('2');" type="file" name="photo_sky" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoSky', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                    <img id="uploadPreview2" src="${createLink(controller:'post', action:'showPhotoSky', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
                 </div>
             </div>
         </td>
@@ -47,18 +48,18 @@
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>North View</p>
-                <input type="file" name="photo_north" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage3" onchange="PreviewImage('3');" type="file" name="photo_north" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoNorth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                    <img id="uploadPreview3" src="${createLink(controller:'post', action:'showPhotoNorth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
                 </div>
             </div>
         </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>South View</p>
-                <input type="file" name="photo_south" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage4" onchange="PreviewImage('4');" type="file" name="photo_south" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoSouth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                    <img id="uploadPreview4" src="${createLink(controller:'post', action:'showPhotoSouth', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
                 </div>
             </div>
         </td>
@@ -71,24 +72,29 @@
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>East View</p>
-                <input type="file" name="photo_east" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage5" onchange="PreviewImage('5');" type="file" name="photo_east" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoEast', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
+                    <img id="uploadPreview5" src="${createLink(controller:'post', action:'showPhotoEast', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%;padding-top: 5%"/>
                 </div>
             </div>
         </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>West View</p>
-                <input type="file" name="photo_west" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
+                <input id="uploadImage6" onchange="PreviewImage('6');" type="file" name="photo_west" class="file"  style="width: 100px; height: 100px; padding-top: 5%"  accept="image/*" capture/>
                 <div class="fakefile">
-                    <img src="${createLink(controller:'post', action:'showPhotoWest', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
+                    <img id="uploadPreview6" src="${createLink(controller:'post', action:'showPhotoWest', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
                 </div>
             </div>
         </td>
         <td style="width: calc(50% - 100px); border: 0px">
         </td>
     </tr>
+    <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%"></td></tr>
+</table>
+
+<table>
+    <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff"></td></tr>
 </table>
 
 <div class="textArea">

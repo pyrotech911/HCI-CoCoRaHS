@@ -11,7 +11,7 @@
         <asset:javascript src="geolocation.js"/>
 	</head>
 	<body>
-    <g:set var="navTitle" value="Update Post" scope="request"/>
+    <g:set var="navTitle" value="New Post" scope="request"/>
     <g:render template="/navbar"/>
     <div class="map" id="map" style="width:100%;height:400px;"></div>
 		<div id="create-post" class="content scaffold-create" role="main">

@@ -17,6 +17,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><button onclick="goBack()" class="back"><img src="/cocorahs/assets/site/BackButton.svg" height=110% width=auto></button></li>
+                    <li style="border: none; outline: none; width: auto;"><a href="${createLink(controller:'help')}"><img src="/cocorahs/assets/site/HelpButton.svg" style="height: 40px; padding-bottom: 0px"></a></li>
+                    <li style="border: none; outline: none; width: auto"><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></li>
+
                 </ul>
             </div>
        </div>
@@ -27,8 +30,6 @@
             <ul class="nav navbar-nav navbar-right">
                   <table>
                     <tr>
-                        <td style="border: none; outline: none; width: auto;"><a href="${createLink(controller:'help')}"><img src="/cocorahs/assets/site/HelpButton.svg" style="height: 40px; padding-top: 0px"></a></td>
-                        <td style="border: none; outline: none; width: auto"><form name="logout" method="POST" action="${createLink(controller:'logout') }"> <input type="submit" value="Logout" height="100%" class="logout"></form></td>
                     </tr>
                   </table>
             </ul>

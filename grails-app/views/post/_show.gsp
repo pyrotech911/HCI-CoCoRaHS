@@ -9,5 +9,5 @@
 }</script>
 
 <div class="subButton">
-    <g:submitButton name="Submit" autofocus="true"  value="Ok" style="background-color: #838384;border: 1px; height:40px; width:250px; border-radius: 4% " ></g:submitButton>
+    <g:submitButton name="Submit" autofocus="true"  value="Ok" style="background-color: #838384;border: 1px; height:40px; width:250px; border-radius: 4%; margin-bottom: 10px" ></g:submitButton>
 </div>

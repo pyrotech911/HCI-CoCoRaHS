@@ -77,7 +77,6 @@ class PostController {
     }
 
     def create() {
-
         def sta = cocorahs.Station.get(params.stID)
         respond new Post([station: sta])
     }
@@ -124,6 +123,33 @@ class PostController {
             respond postInstance.errors, view: 'edit'
             return
         }
+
+        //retain old photos if new ones are not uploaded
+        def photo1 = request.getFile('photo_gauge')
+        def photo2 = request.getFile('photo_sky')
+        def photo3 = request.getFile('photo_north')
+        def photo4 = request.getFile('photo_south')
+        def photo5 = request.getFile('photo_east')
+        def photo6 = request.getFile('photo_west')
+        if(photo1.empty){
+            postInstance.photo_gauge = postInstance.getPersistentValue('photo_gauge')
+        }
+        if(photo2.empty){
+            postInstance.photo_sky = postInstance.getPersistentValue('photo_sky')
+        }
+        if(photo3.empty){
+            postInstance.photo_north = postInstance.getPersistentValue('photo_north')
+        }
+        if(photo4.empty){
+            postInstance.photo_south = postInstance.getPersistentValue('photo_south')
+        }
+        if(photo5.empty){
+            postInstance.photo_east = postInstance.getPersistentValue('photo_east')
+        }
+        if(photo6.empty){
+            postInstance.photo_west = postInstance.getPersistentValue('photo_west')
+        }
+
         postInstance.save flush: true
 
         request.withFormat {

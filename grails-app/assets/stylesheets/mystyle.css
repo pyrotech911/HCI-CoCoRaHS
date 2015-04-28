@@ -28,9 +28,9 @@
 }
 
 .postImg{
-    background-image: url(/cocorahs/assets/site/PostSegment.svg);
+/*    background-image: url(/cocorahs/assets/site/PostSegment.svg);
     background-size: auto auto;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;   */
     color: #ffffff;
     /*width: auto;*/
     /*height: 400%;*/
@@ -214,11 +214,6 @@ input.file {
     opacity: 0;
     z-index: 2;
 }
-
-
-
-
-
 
 .addedit {
 	color: #FFF;
