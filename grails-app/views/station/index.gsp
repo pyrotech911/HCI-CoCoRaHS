@@ -5,7 +5,10 @@
     <title>Station</title>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script>var latlngarray = [];</script>
-    <script>window.onload = function(){initGeolocation()}</script>
+    <script>window.onload = function(){
+        initGeolocation()
+        calcWidth()
+    }</script>
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="mystyle.css"/>
     <asset:javascript src="geolocation.js"/>
@@ -16,10 +19,10 @@
       <table class="stationList">
         <g:each in="${stationList}">
           <g:if test="${it.latitude} != null && ${it.longitude} != null">
-            <tr><td class="stationEntry"><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (${it.latitude},${it.longitude})</g:link></td></tr>
+            <tr><td style="border:0px"><g:link controller="post" action="index" params='[stID: "${it.id}"]'><div class="stationEntry">${it.stationId} (${it.latitude},${it.longitude})</div></g:link></td></tr>
           </g:if>
           <g:else>
-            <tr><td class="stationEntry"><g:link controller="post" action="index" params='[stID: "${it.id}"]'>${it.stationId} (Location Unknown)</g:link></td></tr>
+            <tr><td style="border:0px"><g:link controller="post" action="index" params='[stID: "${it.id}"]'><div class="stationEntry">${it.stationId} (Location Unknown)</div></g:link></td></tr>
           </g:else>
           <script>
             latlngarray[latlngarray.length] = ${it.latitude}

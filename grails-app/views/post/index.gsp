@@ -19,7 +19,7 @@
   <div class="map" id="map" style="width:100%;height:400px;"></div>
     <table class="addPost">
       <tr style="border-bottom: 1px solid #ffffff">
-        <td class="addButton"><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 100%; font-weight: bold ">Make a New Post</g:link></td>
+        <td><g:link controller="post" action="create" params="${params}" style="color: #ffffff; font-size: 100%; font-weight: bold "><div class="addButton">Make a New Post</div></g:link></td>
       </tr>
     </table>
     <hr />

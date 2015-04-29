@@ -24,7 +24,7 @@
             </div>
        </div>
 
-       <p class="navbar-text" style="padding-left: 40%; color: #ffffff;font-size: 170%">${navTitle}</p>
+       <p class="navbar-text" style="padding-left: 30%; color: #ffffff;font-size: 170%">${navTitle}</p>
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">

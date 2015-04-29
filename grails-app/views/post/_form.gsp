@@ -19,10 +19,8 @@
     <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5% ; border-bottom: solid #ffffff"><p id="time"></p></td></tr>
 </table>
 
-<table>
+<table class="formTable">
     <tr>
-        <td style="width: calc(50% - 100px); border: 0px">
-        </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>Gauge View</p>
@@ -32,6 +30,7 @@
                 </div>
             </div>
         </td>
+        <td style="width: 50px; border: 0px;"></td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>Sky View</p>
@@ -41,12 +40,8 @@
                 </div>
             </div>
         </td>
-        <td style="width: calc(50% - 100px); border: 0px">
-        </td>
     </tr>
     <tr>
-        <td style="width: calc(50% - 100px); border: 0px">
-        </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>North View</p>
@@ -56,6 +51,7 @@
                 </div>
             </div>
         </td>
+        <td style="width: 50px; border: 0px;"></td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>South View</p>
@@ -65,12 +61,8 @@
                 </div>
             </div>
         </td>
-        <td style="width: calc(50% - 100px); border: 0px">
-        </td>
     </tr>
     <tr>
-        <td style="width: calc(50% - 100px); border: 0px">
-        </td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>East View</p>
@@ -80,6 +72,7 @@
                 </div>
             </div>
         </td>
+        <td style="width: 50px; border: 0px;"></td>
         <td style="width: 100px; border: 0px;">
             <div class="fileinputs">
                 <p>West View</p>
@@ -88,8 +81,6 @@
                     <img id="uploadPreview6" src="${createLink(controller:'post', action:'showPhotoWest', id:"${postInstance?.id}")}" alt="Image not found" onError="this.onerror=null;this.src='/cocorahs/assets/site/photoAdd.svg';" width=100px height=100px style="border-radius: 20%; padding-top: 5%;"/>
                 </div>
             </div>
-        </td>
-        <td style="width: calc(50% - 100px); border: 0px">
         </td>
     </tr>
     <tr><td style="color: #ffffff; font-size: 30px; border: none; outline: none; text-align: left; padding-left: 5%"></td></tr>
